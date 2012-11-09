@@ -1,4 +1,4 @@
-package com.tw;
+package com.tw.hanoi;
 
 import org.junit.Test;
 
@@ -42,10 +42,6 @@ public class HanoiTest {
         assertThat(x.dishesCount(), is(0));
         assertThat(y.dishesCount(), is(0));
         assertThat(z.dishesCount(), is(2));
-        printDishes(x, y, z);
     }
 
-    private void printDishes(Hanoi.Tower x, Hanoi.Tower y, Hanoi.Tower z) {
-
-    }
 }

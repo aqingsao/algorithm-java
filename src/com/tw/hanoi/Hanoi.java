@@ -1,4 +1,4 @@
-package com.tw;
+package com.tw.hanoi;
 
 import com.tw.stack.Stack;
 

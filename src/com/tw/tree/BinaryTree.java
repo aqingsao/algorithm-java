@@ -1,6 +1,6 @@
-package com.tw;
+package com.tw.tree;
 
-class BinaryTree<T> {
+public class BinaryTree<T> {
     private BinaryTree<T> leftChild = null;
     private BinaryTree<T> rightChild = null;
     private T data;

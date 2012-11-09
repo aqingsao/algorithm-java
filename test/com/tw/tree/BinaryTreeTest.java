@@ -1,4 +1,4 @@
-package com.tw;
+package com.tw.tree;
 
 import org.junit.Test;
 
@@ -9,17 +9,17 @@ import static org.junit.Assert.assertThat;
 
 public class BinaryTreeTest {
     @Test
-    public void should_return_root(){
+    public void should_return_root() {
         assertThat(createRoot(50).getData(), is(50));
     }
 
     @Test
-    public void should_return_null_when_not_have_left_child(){
+    public void should_return_null_when_not_have_left_child() {
         assertThat(createRoot(50).leftChild(), nullValue());
     }
 
     @Test
-    public void should_return_left_child_when_not_have_left_child(){
+    public void should_return_left_child_when_not_have_left_child() {
         BinaryTree<Integer> root = createRoot(50);
 
         root.addLeftChild(new BinaryTree(20));
@@ -28,7 +28,7 @@ public class BinaryTreeTest {
     }
 
     @Test
-    public void should_return_right_child_when_not_have_left_child(){
+    public void should_return_right_child_when_not_have_left_child() {
         BinaryTree<Integer> root = createRoot(500);
 
         root.addRightChild(new BinaryTree(30));

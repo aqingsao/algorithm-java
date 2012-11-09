@@ -1,4 +1,6 @@
-package com.tw;
+package com.tw.tree;
+
+import com.tw.tree.BinaryTree;
 
 import java.util.LinkedList;
 import java.util.List;
