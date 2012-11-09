@@ -1,4 +1,4 @@
-package com.tw;
+package com.tw.stack;
 
 public class Stack {
     private Integer[] list;

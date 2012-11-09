@@ -1,5 +1,7 @@
 package com.tw;
 
+import com.tw.stack.Stack;
+
 public class Hanoi {
     public void hanoi(Tower x, Tower y, Tower z) {
         hanoiOne(x.dishesCount() - 1, x, y, z);

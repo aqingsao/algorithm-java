@@ -1,4 +1,4 @@
-package com.tw;
+package com.tw.queue;
 
 public class Queue {
     private Element head = null;
