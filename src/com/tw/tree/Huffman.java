@@ -1,28 +1,26 @@
 package com.tw.tree;
 
-import com.tw.tree.BinaryTree;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class Huffman {
-    public BinaryTree<Code> buildTree(List<Code> codes) {
-        List<BinaryTree<Code>> trees = new LinkedList<BinaryTree<Code>>();
-        for (Code code : codes) {
-            trees.add(new BinaryTree<Code>(code));
+    public BinaryTree<Node> buildTree(List<Node> nodes) {
+        List<BinaryTree<Node>> trees = new LinkedList<BinaryTree<Node>>();
+        for (Node node : nodes) {
+            trees.add(new BinaryTree<Node>(node));
         }
         while (trees.size() >= 2) {
             BinaryTree min = getMin(trees);
             BinaryTree min2 = getMin(trees);
-            BinaryTree<Code> newTree = mergeTree(min, min2);
+            BinaryTree<Node> newTree = mergeTree(min, min2);
             trees.add(newTree);
         }
         return trees.get(0);
     }
 
-    private BinaryTree getMin(List<BinaryTree<Code>> trees) {
-        BinaryTree<Code> ret = trees.get(0);
-        for (BinaryTree<Code> tree : trees) {
+    private BinaryTree getMin(List<BinaryTree<Node>> trees) {
+        BinaryTree<Node> ret = trees.get(0);
+        for (BinaryTree<Node> tree : trees) {
             if (tree.getData().getWeight() < ret.getData().getWeight()) {
                 ret = tree;
             }
@@ -31,18 +29,18 @@ public class Huffman {
         return ret;
     }
 
-    private BinaryTree<Code> mergeTree(BinaryTree<Code> min, BinaryTree<Code> max) {
-        BinaryTree<Code> ret = new BinaryTree<Code>(new Code(min.getData().getWeight() + max.getData().getWeight()));
+    private BinaryTree<Node> mergeTree(BinaryTree<Node> min, BinaryTree<Node> max) {
+        BinaryTree<Node> ret = new BinaryTree<Node>(new Node(min.getData().getWeight() + max.getData().getWeight()));
         ret.addLeftChild(min);
         ret.addRightChild(max);
         return ret;
     }
 
-    public void buildCode(BinaryTree<Code> binaryTree) {
+    public void buildCode(BinaryTree<Node> binaryTree) {
         buildHuffmanCode(new StringBuffer(), binaryTree);
     }
 
-    private void buildHuffmanCode(StringBuffer bits, BinaryTree<Code> binaryTree) {
+    private void buildHuffmanCode(StringBuffer bits, BinaryTree<Node> binaryTree) {
         BinaryTree left = binaryTree.leftChild();
         if (left != null) {
             bits.append("0");
@@ -59,11 +57,11 @@ public class Huffman {
         }
     }
 
-    static class Code {
+    static class Node {
         private int weight;
         private String huffmanCode;
 
-        public Code(int weight) {
+        public Node(int weight) {
             this.weight = weight;
         }
 
