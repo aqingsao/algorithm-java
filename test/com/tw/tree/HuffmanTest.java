@@ -1,6 +1,5 @@
 package com.tw.tree;
 
-import com.tw.tree.BinaryTree;
 import org.junit.Test;
 
 import static java.util.Arrays.asList;
@@ -13,7 +12,7 @@ public class HuffmanTest {
         huffman.buildCode(binaryTree);
     }
 
-    private Huffman.Code asCode(int weight) {
-        return new Huffman.Code(weight);
+    private Huffman.Node asCode(int weight) {
+        return new Huffman.Node(weight);
     }
 }
